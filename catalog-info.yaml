@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: qyknhad9a-go-gitops
+  description: This is GitOps manifest for qyknhad9a-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=qyknhad9a-go
+    backstage.io/kubernetes-id: qyknhad9a-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: qyknhad9a-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:qyknhad9a-go
